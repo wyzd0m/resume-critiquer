@@ -15,7 +15,8 @@ Paste your resume, enter a target role, and get a five-section critique with an 
 
 **[▶ Try it now → resume-critiquer-aggjcbhxsuur2rbxxh8dyn.streamlit.app](https://resume-critiquer-aggjcbhxsuur2rbxxh8dyn.streamlit.app/)**
 
-> 📸 *Screenshot coming soon*
+> 📸 <img width="1188" height="1242" alt="image" src="https://github.com/user-attachments/assets/c4dc7297-f8bf-43c9-86fd-c8d6cdb50d46" />
+
 
 ---
 
