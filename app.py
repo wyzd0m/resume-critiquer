@@ -24,21 +24,23 @@ load_dotenv()
 api_key = st.secrets.get("ANTHROPIC_API_KEY", os.getenv("ANTHROPIC_API_KEY"))
 
 # If no key was found automatically, show a sidebar field so the user can paste
-# one directly — no .env file required for quick testing.
+# their own key — this is the expected flow for anyone using the live demo.
 if not api_key:
     with st.sidebar:
-        st.markdown("### 🔑 API Key")
+        st.markdown("### 🔑 Your Anthropic API Key")
         st.markdown(
-            "No key found in `.env`. Paste yours here for a quick test, "
-            "or follow the **README** to set up `.env` properly."
+            "This app is powered by Claude and requires your own API key.\n\n"
+            "**Get one at [console.anthropic.com](https://console.anthropic.com)** — "
+            "a $5 top-up covers 80+ critiques.\n\n"
+            "Your key is sent directly to Anthropic and is **never stored** by this app."
         )
         api_key = st.text_input(
-            "Anthropic API Key",
+            "Paste your API key",
             type="password",       # hides the key while typing
             placeholder="sk-ant-...",
         )
         if not api_key:
-            st.info("Enter your API key above to enable the app.")
+            st.info("👆 Paste your key above to get started.")
 
 # ── Title & caption ────────────────────────────────────────────────────────────
 st.title("🧠 AI Resume Critiquer")
@@ -90,7 +92,7 @@ analyse_clicked = st.button(
 )
 
 if not api_key:
-    st.caption("⚠️ Add your API key in the sidebar to enable analysis.")
+    st.caption("⚠️ Paste your Anthropic API key in the sidebar to enable analysis.")
 
 # ── Validation & API call ──────────────────────────────────────────────────────
 if analyse_clicked:
